@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
-// import { GoogleAnalytics } from '@next/third-parties/google'
-import Script from "next/script";
-const inter = Inter({ subsets: ["latin"] });
+import { GoogleAnalytics } from '@next/third-parties/google'
+// import Script from "next/script";
+const inter = Roboto({ weight: '400', subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ5Z5KX618"></script>
         <script id='google-analytics'>
           {`window.dataLayer = window.dataLayer || [];
@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
 
           gtag('config', 'G-WQ5Z5KX618');`}
         </script>
-      </head>
+      </head> */}
       <body className={inter.className}>{children}</body>
-      {/* <GoogleAnalytics gaId="G-WQ5Z5KX618" /> */}
+      <GoogleAnalytics gaId="G-WQ5Z5KX618" />
     </html>
   );
 }
